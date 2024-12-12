@@ -1,2 +1,2 @@
-# naomi-m.github.io
-personal website
+### naomi-m.github.io
+My personal website
