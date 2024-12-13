@@ -13,10 +13,9 @@ export const theme = createTheme({
   },
 });
 
-// App is the root component of our application and as children contain all our pages
-// We use React Router's BrowserRouter and Routes components to define the pages for
-// our application, with each Route component representing a page and the common
-// NavBar component allowing us to navigate between pages (with hyperlinks)
+// App is the root component of our app
+// React Router's BrowserRouter and Routes components to define the pages
+// Each Route component representing a page
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
