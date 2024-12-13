@@ -28,17 +28,31 @@ export default function HomePage() {
 
 
   // functions
-  //TODO function that parses education/projects first line
+
+  /**
+   * Function that creates JS html code for edu/projects first line.
+   * TODO parse file.
+   * @param {*} line 
+   * @returns JS code
+   */
+  function eduProjFirstLine(line) {
+    //TODOHERE
+    let colonLoc = line.indexOf('|');  // index where to slice
+    // slice
+    let category = line.slice(2, colonLoc);  // hypen, space always at start so start at 2
+    let description = line.slice(colonLoc+1);
+    
+    return <p style={pFormat}><b>{category}</b>: {description}</p>;
+  }
 
   /**
    * Function that creates JS html code for item from TECHNICAL SKILLS section.
-   * TODO alter to read/parse resume file for more efficiency.
+   * TODO parse file.
    * @param {*} line 
    * @returns JS code
    */
   function skillLine(line) {
-    // slice indexes
-    let colonLoc = line.indexOf(':');
+    let colonLoc = line.indexOf(':');  // index where to slice
     // slice
     let category = line.slice(2, colonLoc);  // hypen, space always at start so start at 2
     let description = line.slice(colonLoc+1);
@@ -51,6 +65,7 @@ export default function HomePage() {
   let ts1 = skillLine("– Preferred Languages: Java, Python");
   let ts2 = skillLine("– Language Exposure: C++, C, SQL, MySQL, JavaScript, HTML, CSS");
   let ts3 = skillLine("– Competencies: Internet & Web Systems (Java, AWS EC2), Networked Systems (C++, Docker), Database & Information Systems (MySQL, JavaScript), Computer & Network Security (Python, JavaScript, VirtualBox)");
+  let l1 = eduProjFirstLine("University of Pennsylvania    |    Aug 2022 – May 2024    |    Philadelphia, PA");
 
 
   return (
