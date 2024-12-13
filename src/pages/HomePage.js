@@ -5,10 +5,10 @@ import { Container, Divider, Link } from '@mui/material';
 // const config = require('../config.json');
 
 export default function HomePage() {
-  let [containerWidth, setContainerWidth] = useState(100);
+  let [containerWidth, setContainerWidth] = useState(window.innerWidth <= 768 ? 100 : 50);
 
-  
   useEffect(() => {
+    // sync container width based on window size
     function handleResize() {
       setContainerWidth(window.innerWidth <= 768 ? 100 : 50);  //768 standard px for mobile
     }
