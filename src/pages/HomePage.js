@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Box, Container, Divider, Link } from '@mui/material';
+import Collapsible from '../components/Collapsible';
+
 // import { NavLink } from 'reasct-router-dom';
 
 // const config = require('../config.json');
@@ -22,7 +24,7 @@ export default function HomePage() {
 
   // container formatting
   const flexFormat = { display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', width: `${containerWidth}%` };
-  const allFormat = { fontFamily: 'calibri light', width: `${containerWidth}%` };
+  const allFormat = { width: `${containerWidth}%` };
   const nameFormat = { textAlign: 'center', marginTop: 100 };
   const contentFormat = { padding: 30 };
   const pFormat = { margin: 0, padding: 0 }
@@ -57,7 +59,7 @@ export default function HomePage() {
  * @param {*} line 
  * @returns JS code
  */
-  function expSecLine(line) {
+  function expTitle(title, line) {
     // slice 1
     let barLoc = line.indexOf('|');  // index where to slice
     let dates = line.slice(0, barLoc).trim();
@@ -67,8 +69,8 @@ export default function HomePage() {
     let company = remaining.slice(0, barLoc).trim();
     // slice 3
     let city = remaining.slice(barLoc+1).trim();
-    
-    return <p style={pFormat}>{dates}{fourSpaces}|{fourSpaces}{company}{fourSpaces}|{fourSpaces}{city}</p>;
+    <p style={pFormat}><b>{title}</b></p>
+    return <p style={pFormat}><b>{title}</b><br/>{dates}{fourSpaces}|{fourSpaces}{company}{fourSpaces}|{fourSpaces}{city}</p>;
   }
 
   /**
@@ -92,13 +94,14 @@ export default function HomePage() {
   let ts2 = skillLine("– Language Exposure: C++, C, SQL, MySQL, JavaScript, HTML, CSS");
   let ts3 = skillLine("– Competencies: Internet & Web Systems (Java, AWS EC2), Networked Systems (C++, Docker), Database & Information Systems (MySQL, JavaScript), Computer & Network Security (Python, JavaScript, VirtualBox)");
   let e1 = eduProjFirstLine("University of Pennsylvania    |    Aug 2022 – May 2024    |    Philadelphia, PA");
+  let e2 = eduProjFirstLine("Temple University    |    Aug 2012 – May 2016    |    Philadelphia, PA");
   let p1 = eduProjFirstLine("Chord and Search | Jan 2024 – May 2024 | C++, NS3, Docker, GitHub");
   let p2 = eduProjFirstLine("FishFishGo | Aug 2023 – Dec 2023 | Java, AWS EC2, REST, GitHub");
   let p3 = eduProjFirstLine("Movie ZYMMformation | Mar 2024 – May 2024 | MySQL, JavaScript, Node.js, React, AWS RDS, GitHub");
   let p4 = eduProjFirstLine("Security Attacks | Aug 2023 – Dec 2023 | C, x86 Assembly, Python, JavaScript, VirtualBox");
-  let exp1 = expSecLine("Jan 2024 – Present | University of Pennsylvania | Philadelphia, PA");
-  let exp2 = expSecLine("Jul 2018 – Jul 2022 | University of Pennsylvania | Philadelphia, PA");
-  
+  let exp1 = expTitle("Graduate Teaching Assistant: Intro to Software Development, Networked Systems", "Jan 2024 – Present | University of Pennsylvania | Philadelphia, PA");
+  let exp2 = expTitle("Assistant Director of Data Analytics","Jul 2018 – Jul 2022 | University of Pennsylvania | Philadelphia, PA");
+
 
   return (
     <Container style={allFormat}>
@@ -123,6 +126,11 @@ export default function HomePage() {
         <h3>EDUCATION</h3>
         {e1}
         <p style={pFormat}>Masters, Computer Science (MCIT)</p>
+        <br />
+        <Collapsible label="">
+          {e2}
+          <p style={pFormat}>Bachelors, Criminal Justice</p>
+        </Collapsible>
       </Container>
 
       {/* skills */}
@@ -136,13 +144,14 @@ export default function HomePage() {
       {/* projects */}
       <Container style={contentFormat}>
         <h3>PROJECTS</h3>
+
         {p1}
         <p style={pFormat}>– Peer-to-peer search engine – used Distributed Hash Table (DHT) for O(log n) efficient stabilization, information storage, and retrieval. Used GitHub for collaboration with teammates.
         </p>
         <p style={pFormat}>– Constructed node stabilization Chord-based network overlay protocol.
         </p>
         <p style={pFormat}>– Implemented IP-layer network node neighbor discovery and Link State routing using Dijkstra’s algorithm – used NS3 as a network simulator and Docker to run in Linux environment.
-        </p>
+        </p>        
         <br/>
 
         {p2}
@@ -175,7 +184,7 @@ export default function HomePage() {
       {/* exp */}
       <Container style={contentFormat}>
         <h3>PROFESSIONAL EXPERIENCE</h3>
-        <p style={pFormat}><b>Graduate Teaching Assistant: Intro to Software Development, Networked Systems</b></p>
+
         {exp1}
         <p style={pFormat}>– Taught course content by leading and supporting recitations, improving engagement and comprehension.
         </p>
@@ -185,7 +194,6 @@ export default function HomePage() {
         </p>
         <br/>
 
-        <p style={pFormat}><b>Assistant Director of Data Analytics</b></p>
         {exp2}
         <p style={pFormat}>– Collaborated with various internal/external partners to coordinate the student calling program by determining data-driven best practices, analyzing and providing client reports, and quality checking and maintaining large data transfer processes through SFTP.
         </p>

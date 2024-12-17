@@ -1,16 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CssBaseline, ThemeProvider } from '@mui/material'
-import { indigo, amber } from '@mui/material/colors'
 import { createTheme } from "@mui/material/styles";
 
 import HomePage from './pages/HomePage';
 
 // customize look
 export const theme = createTheme({
-  palette: {
-    primary: indigo,
-    secondary: amber,
-  },
+  typography: {
+    fontFamily: "calibri light, sans serif",
+  }
 });
 
 // App is the root component of our app
