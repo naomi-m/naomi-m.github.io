@@ -2,9 +2,8 @@ import { useEffect, useState } from 'react';
 import { Box, Container, Divider, Link } from '@mui/material';
 import Collapsible from '../components/Collapsible';
 
-// const config = require('../config.json');
 
-export default function HomePage() {
+export default function ContactPage() {
   const widthCompare = 1000;  //768 standard px for mobile
   let widthWeb = 100;
   let widthMobile = 60;
@@ -28,22 +27,14 @@ export default function HomePage() {
   const pFormat = { margin: 0, padding: 0 }
   const fourSpaces = "\u00A0\u00A0\u00A0\u00A0";  // unicode representation of non-breaking space '&nbsp;'
   const footerFormat = { fontSize: 10, textAlign: 'center' };
-
-
-  // functions
-
-
-
-  // call functions
+  
 
 
   return (
     <Container style={allFormat}>
-      {/* name */}
       <Container style={nameFormat}>
-        <h1>home</h1>
+        <h1>contact</h1>
       </Container>
-      
     </Container>
   );
 };
