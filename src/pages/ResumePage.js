@@ -203,12 +203,9 @@ export default function ResumePage() {
         </p>
       </Container>
 
+      {/* page bottom spacing */}
       <Container><br/><br/></Container>
-      {/* footer */}
-      <Container style={footerFormat}>
-        <Divider />
-        <p>Created using: JavaScript, React, HTML, CSS, Node.js, GitHub</p>
-      </Container>
+      
     </Container>
   );
 };

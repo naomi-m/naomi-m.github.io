@@ -41,9 +41,29 @@ export default function HomePage() {
     <Container style={allFormat}>
       {/* name */}
       <Container style={nameFormat}>
-        <h1>home</h1>
+        <h4>Background</h4>
+        <p style={pFormat}>Recent graduate from Penn with a CS Masters having focused my coursework on becoming a well-rounded developer. I have experience with databases, fundamental security practices, networking architecture, distributed systems, and frontend web app deployment.
+          I am most proficient with Java and Python, but I have had exposure to other languages and am willing to use any language or tool when building projects. I have various experiences – using GitHub for version control, multi-collaborator projects, running containerized Linux environments using Docker, and AWS EC2 web app deployment – to highlight a few. The project I am most proud of is the early-day Google search engine (FishFishGo) I created with teammates.
+          I have experience performing in high-stress, complex hierarchical organizations, as well as collaborating with various colleagues and across teams. Experienced with project management, organization skills, in addition to creativity in improving processes and providing deliverables, to drive internal goals.</p>
+      </Container>
+
+      <Container style={nameFormat}>
+        <h4>Website</h4>
+        <p style={pFormat}>Personal hobby website created using: JavaScript, React, HTML, CSS, Node.js, GitHub. Collapsible section created using useState and button. Content width dynamic based on page resizing using useEffect and useState.</p>
       </Container>
       
+      {/* page bottom spacing */}
+      <Container><br/><br/></Container>
+
+
     </Container>
   );
 };
+
+
+// old code: maybe reuse
+      // {/* footer */}
+      // <Container style={footerFormat}>
+      //   <Divider />
+      //   <p>Created using: JavaScript, React, HTML, CSS, Node.js, GitHub</p>
+      // </Container>

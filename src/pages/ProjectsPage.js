@@ -149,6 +149,8 @@ export default function ProjectPage() {
         </p>
       </Container>
 
+      {/* page bottom spacing */}
+      <Container><br/><br/></Container>
 
     </Container>
   );
