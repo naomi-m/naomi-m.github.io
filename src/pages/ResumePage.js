@@ -31,9 +31,10 @@ export default function ResumePage() {
 
 
   // functions
+  // TODO parse resume file so can handle content better
+
   /**
    * Function that creates JS html code for edu/projects first line.
-   * TODO parse file.
    * @param {*} line 
    * @returns JS code
    */
@@ -53,7 +54,6 @@ export default function ResumePage() {
 
   /**
  * Function that creates JS html code for proexp seecond line.
- * TODO parse file.
  * @param {*} line 
  * @returns JS code
  */
@@ -73,7 +73,6 @@ export default function ResumePage() {
 
   /**
    * Function that creates JS html code for item from TECHNICAL SKILLS section.
-   * TODO parse file.
    * @param {*} line 
    * @returns JS code
    */
@@ -99,6 +98,7 @@ export default function ResumePage() {
   let p4 = eduProjFirstLine("Security Attacks | Aug 2023 – Dec 2023 | C, x86 Assembly, Python, JavaScript, VirtualBox");
   let exp1 = expTitle("Graduate Teaching Assistant: Intro to Software Development, Networked Systems", "Jan 2024 – Present | University of Pennsylvania | Philadelphia, PA");
   let exp2 = expTitle("Assistant Director of Data Analytics","Jul 2018 – Jul 2022 | University of Pennsylvania | Philadelphia, PA");
+  let exp3 = expTitle("Paralegal", "Jun 2016 – Jun 2018 | District Attorney’s Office | Philadelphia, PA");
 
 
   return (
@@ -106,17 +106,6 @@ export default function ResumePage() {
       {/* name */}
       <Container style={nameFormat}>
         <h1>Naomi Makishi</h1>
-        {/* TODO add image for links */}
-        {/* <Container style={flexFormat}>
-          <Box sx={{ width: 100, p: 0 }}>
-            <a style={pFormat} href="http://www.linkedin.com/in/makishi"></a>
-            <img src="/src/images/linkedinlogo.png" alt="LinkedIn logo with link to profile"/>
-          </Box>
-          <Box sx={{ width: 100, p: 0 }}>
-          <a style={pFormat} href="http://www.github.com/naomi-m"><img src="" alt="GitHub logo with link to profile"></img></a>
-          </Box>
-        </Container> */}
-        {/* <p>testtestestasf;l akjsdflkj aioiuawer haksjfan nvmvmaiue woi yatyhqljkfas kljfaoi ueouop qwiet ypqwe fk sjdnvnzx cmvlkflkj aioiuawer haksjfan nvmvmaiue woi yatyhqljkfas kljfaoi ueouop qwiet ypqwe fk sjdnvnzx cmvlkja dfoja dfoi</p> */}
       </Container>
       
       {/* edu */}
@@ -201,6 +190,18 @@ export default function ResumePage() {
         </p>
         <p style={pFormat}>– Fostered relationships across different hierarchies and teams within the complex Development & Alumni Relations organizational structure, partnering with diverse colleagues and working styles, which improved collaboration and communication.
         </p>
+
+        <br />
+        <Collapsible label="">
+          {exp3}
+          <p style={pFormat}>– Attended court and collaborated with varying levels of authority – judges, attorneys, court staff, law
+          enforcement, and citizens – to maintain procedural structure of court proceedings.</p>
+          <p style={pFormat}>– Managed hundreds of physical and digital files, prepared cases, ran NCIC queries, managed incoming
+          referrals, and kept track of statistics and data.</p>
+          <p style={pFormat}>– Took initiative to create Standard Operating Procedure guidelines, optimizing overall Diversion Courts
+          program management.</p>
+        </Collapsible>
+
       </Container>
 
       {/* page bottom spacing */}

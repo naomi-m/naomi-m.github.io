@@ -34,6 +34,18 @@ export default function ContactPage() {
     <Container style={allFormat}>
       <Container style={nameFormat}>
         <h1>contact</h1>
+        {/* TODO add image for links */}
+        {/* <Container style={flexFormat}>
+          <Box sx={{ width: 100, p: 0 }}>
+            <a style={pFormat} href="http://www.linkedin.com/in/makishi"></a>
+            <img src="/src/images/linkedinlogo.png" alt="LinkedIn logo with link to profile"/>
+          </Box>
+          <Box sx={{ width: 100, p: 0 }}>
+          <a style={pFormat} href="http://www.github.com/naomi-m"><img src="" alt="GitHub logo with link to profile"></img></a>
+          </Box>
+        </Container> */}
+        {/* <p>testtestestasf;l akjsdflkj aioiuawer haksjfan nvmvmaiue woi yatyhqljkfas kljfaoi ueouop qwiet ypqwe fk sjdnvnzx cmvlkflkj aioiuawer haksjfan nvmvmaiue woi yatyhqljkfas kljfaoi ueouop qwiet ypqwe fk sjdnvnzx cmvlkja dfoja dfoi</p> */}
+
       </Container>
     </Container>
   );
